@@ -1,0 +1,333 @@
+/* ---------------------------------------------------------
+   GLOBAL
+--------------------------------------------------------- */
+
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: system-ui, sans-serif;
+  background: #fdfdfd;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE RENDERER VARIABLES
+--------------------------------------------------------- */
+
+:root {
+  --number-height: max(7vw, 50px);
+  --symbol-height: calc(var(--number-height) / 2);
+
+  --facts-number-height: calc(var(--number-height) / 3);
+  --facts-symbol-height: calc(var(--facts-number-height) / 2);
+}
+
+/* ---------------------------------------------------------
+   FLEXIBLE TOP BAR
+--------------------------------------------------------- */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+}
+
+#settings-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#settings-form label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+  font-size: 0.9rem;
+}
+
+#settings-form input[type="number"] {
+  width: 50px;
+  padding: 2px 4px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#settings-form button {
+  padding: 6px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+  flex-wrap: nowrap;
+}
+
+.trial-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+}
+
+.home-icon {
+  width: 32px;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.home-icon:hover {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   SOUND TOGGLE
+--------------------------------------------------------- */
+
+.sound-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.sound-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.sound-icon {
+  width: 28px;
+  height: auto;
+}
+
+.sound-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  width: 30px;
+  height: 3px;
+  background: red;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.sound-toggle input:not(:checked) ~ .sound-wrapper::after {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   RENDERER WRAPPERS
+--------------------------------------------------------- */
+
+/* Only problem + solution are card-like boxes */
+#problem-wrapper,
+#solution-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  background: white;
+}
+
+/* Facts wrapper is just a plain container */
+#facts-wrapper {
+  width: 100%;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------------------------------------------------------
+   RENDERER ROWS
+--------------------------------------------------------- */
+
+.render-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.fact-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2vw;
+}
+
+.render-row img,
+.fact-row img {
+  display: inline-block;
+  height: auto;
+  max-height: 100%;
+}
+
+/* ---------------------------------------------------------
+   OUTER CONTAINERS
+--------------------------------------------------------- */
+
+#problem,
+#solution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Facts container stays vertical */
+#facts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Smooth scaling animation */
+img {
+  transition: height 0.3s ease;
+}
+
+/* ---------------------------------------------------------
+   CORRECT / WRONG COLOURING
+--------------------------------------------------------- */
+
+.solution-correct {
+  background-color: #d4ffd4;
+}
+
+.solution-wrong {
+  background-color: #ffd4d4;
+}
+
+/* ---------------------------------------------------------
+   ANSWER AREA
+--------------------------------------------------------- */
+
+.answer-section {
+  margin-top: 20px;
+}
+
+.answer-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+#answer-input {
+  font-size: 2rem;
+  padding: 6px 12px;
+  width: 90px;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+}
+
+#ok-button {
+  font-size: 1.8rem;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+}
+
+#ok-button:hover {
+  background: #d5d5d5;
+}
+
+.next-btn {
+  font-size: 1.8rem;
+  padding: 6px 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #ffd966;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.next-btn:hover {
+  background: #ffcc33;
+}
+
+/* ---------------------------------------------------------
+   MEDIA QUERIES
+--------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top-left,
+  .top-right {
+    justify-content: center;
+  }
+
+  #answer-input {
+    font-size: 1.5rem;
+    width: 70px;
+  }
+
+  .next-btn {
+    padding: 6px 20px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --number-height: max(7vw, 50px);
+    --symbol-height: calc(var(--number-height) / 2);
+    --facts-number-height: calc(var(--number-height) / 3);
+    --facts-symbol-height: calc(var(--facts-number-height) / 2);
+  }
+}
+

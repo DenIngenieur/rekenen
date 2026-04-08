@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>+ - * /</title>
+  <link rel="stylesheet" href="css/exercise.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <section class="topbar">
+
+      <div class="top-left">
+        <form id="settings-form">
+          <label>
+            Max:
+            <input type="number" id="max-number" min="1" value="20">
+          </label>
+
+          <label>
+            #:
+            <input type="number" id="num-trials" min="1" value="5">
+          </label>
+
+          <button type="submit">🚀 ▶</button>
+
+          <label class="sound-toggle">
+            <input type="checkbox" id="sound-enabled">
+            <span class="sound-wrapper">
+              <img src="pics/speaker.png" class="sound-icon" alt="sound">
+            </span>
+          </label>
+        </form>
+      </div>
+
+      <div class="top-right">
+        <div class="trial-box">
+          <span id="trial-info">0 / 0</span>
+        </div>
+
+        <a href="index.html" class="home-link">
+          <img src="pics/home.png" alt="Home" class="home-icon">
+        </a>
+      </div>
+
+    </section>
+
+    <div id="problem-wrapper">
+      <div id="problem"></div>
+    </div>
+
+    <div id="solution-wrapper" class="hidden">
+      <div id="solution"></div>
+    </div>
+
+    <section class="answer-section">
+      <div class="answer-row">
+        <form id="answer-form">
+          <input type="number" id="answer-input" autocomplete="off">
+          <button type="submit" id="ok-button">OK</button>
+        </form>
+
+        <button id="next-button" class="next-btn" style="display:none;">▶</button>
+      </div>
+    </section>
+
+    <div id="facts-wrapper" class="hidden">
+      <div id="facts"></div>
+    </div>
+
+  </main>
+
+    <script type="module" src="js/op-loader.js"></script>
+
+
+<!-- Preload pics -->
+<div style="width:0; height:0; overflow:hidden; position:absolute; opacity:0;">
+  <!-- Numbers -->
+  <img src="pics/numbers/0.png" alt="">
+  <img src="pics/numbers/1.png" alt="">
+  <img src="pics/numbers/2.png" alt="">
+  <img src="pics/numbers/3.png" alt="">
+  <img src="pics/numbers/4.png" alt="">
+  <img src="pics/numbers/5.png" alt="">
+  <img src="pics/numbers/6.png" alt="">
+  <img src="pics/numbers/7.png" alt="">
+  <img src="pics/numbers/8.png" alt="">
+  <img src="pics/numbers/9.png" alt="">
+
+  <!-- Symbols -->
+  <img src="pics/symbols/plus.png" alt="">
+  <img src="pics/symbols/min.png" alt="">
+  <img src="pics/symbols/mul.png" alt="">
+  <img src="pics/symbols/div.png" alt="">
+  <img src="pics/symbols/slash.png" alt="">
+  <img src="pics/symbols/equals.gif" alt="">
+</div>
+
+</body>
+</html>
+
