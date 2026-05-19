@@ -2,7 +2,7 @@
 
 ## Wat is dit?
 
-Een online rekenspel om hoofrekenen te oefenen. Kies een bewerking en los een reeks sommen op. Na elk antwoord zie je **weetjes** die laten zien hoe de som samenhangt met andere bewerkingen (bijvoorbeeld omkeersommen).
+Een [online rekenspel](https://deningenieur.github.io/rekenen/) om hoofrekenen te oefenen. Kies een bewerking en los een reeks sommen op. Na elk antwoord zie je **weetjes** die laten zien hoe de som samenhangt met andere bewerkingen (bijvoorbeeld omkeersommen).
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
