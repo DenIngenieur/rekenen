@@ -1,3 +1,5 @@
+This text in [English](https://deningenieur.github.io/rekenen/explanation.en.html). 
+
 # 🧮 Rekenoefeningen – plus, min, keer, delen
 
 ## Wat is dit?
